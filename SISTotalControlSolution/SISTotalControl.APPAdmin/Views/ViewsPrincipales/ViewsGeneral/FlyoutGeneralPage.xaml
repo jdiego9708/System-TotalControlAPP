@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<FlyoutPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="SISTotalControl.APPAdmin.Views.ViewsPrincipales.ViewsGeneral.FlyoutGeneralPage"
+    xmlns:page="clr-namespace:SISTotalControl.APPAdmin.Views.ViewsTurnos"
+    xmlns:pageGeneral="clr-namespace:SISTotalControl.APPAdmin.Views.ViewsPrincipales.ViewsGeneral"
+    xmlns:pageProductos="clr-namespace:SISTotalControl.APPAdmin.Views.ViewsProductos"
+    FlyoutLayoutBehavior="Default">
+    <FlyoutPage.Flyout>
+        <pageGeneral:MenuGeneralPage />
+    </FlyoutPage.Flyout>
+    <FlyoutPage.Detail>
+        <pageProductos:ProductosPage />
+    </FlyoutPage.Detail>
+</FlyoutPage>

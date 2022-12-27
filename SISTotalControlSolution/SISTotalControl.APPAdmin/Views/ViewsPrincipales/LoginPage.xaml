@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="SISTotalControl.APPAdmin.Views.ViewsPrincipales.LoginPage"
+    Shell.NavBarIsVisible="False"
+    BackgroundImageSource="wallpaperuno.png">
+    <Grid
+            RowDefinitions="*,*,*,*,*,*"
+            Margin="0"
+            Padding="10,50,10,10">
+
+            <StackLayout
+                Grid.Row="0"
+                VerticalOptions="Start">
+                <Label
+                    FontSize="35"
+                    FontAttributes="Bold"
+                    HorizontalOptions="Center"
+                    Text="SOFTWARE HOUSE"
+                    TextColor="{StaticResource Primary}" />
+                <Label
+                    FontSize="18"
+                    FontAttributes="Bold"
+                    HorizontalOptions="Center"
+                    Text="Colombia"
+                    TextColor="{StaticResource Primary}" />
+            </StackLayout>
+
+            <Image
+                Grid.Row="1"
+                HorizontalOptions="Center"
+                HeightRequest="150"
+                Source="walletcuatromain.png"
+                VerticalOptions="Start"
+                WidthRequest="150" />
+
+            <Label
+                FontSize="35"
+                FontAttributes="Bold"
+                Grid.Row="2"
+                HorizontalOptions="Center"
+                Text="Inicio de sesión"
+                VerticalOptions="End"
+                TextColor="{StaticResource Primary}" />
+
+            <StackLayout
+                Grid.Row="3">
+                <Label
+                    FontSize="20"
+                    FontAttributes="Bold"
+                    HorizontalOptions="Center"
+                    Text="SISTotalControl"
+                    VerticalOptions="Start"
+                    TextColor="{StaticResource Primary}" />
+            </StackLayout>
+
+            <Entry
+                Keyboard="Numeric"
+                FontSize="50"
+                Grid.Row="4"
+                HorizontalOptions="Center"
+                Placeholder="PIN"
+                PlaceholderColor="{StaticResource Gray500}"
+                VerticalOptions="Start"
+                TextColor="{StaticResource Primary}"
+                IsPassword="True" />
+
+            <Button
+                Clicked="Button_Clicked"
+                BackgroundColor="{StaticResource Primary}"
+                CornerRadius="50"
+                FontSize="30"
+                FontAttributes="Bold"
+                Grid.Row="5"
+                HeightRequest="80"
+                VerticalOptions="Start"
+                WidthRequest="280"
+                Text="Ingresar" />
+        </Grid>
+</ContentPage>

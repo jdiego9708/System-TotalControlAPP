@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Shell
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="SISTotalControl.APPAdmin.Views.ViewsPrincipales.TabBarMainPage"
+    xmlns:local="clr-namespace:SISTotalControl.APPAdmin.Views.ViewsPrincipales"
+    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit">
+
+    <ContentPage>
+        <toolkit:DockLayout>
+            <StackLayout
+                toolkit:DockLayout.DockPosition="Top"
+                HorizontalOptions="Center">
+                <Grid
+                    BackgroundColor="{StaticResource Primary}"
+                    ColumnDefinitions="*,*,*,*">
+                    <Image
+                        Margin="15"
+                        Grid.Column="0"
+                        HorizontalOptions="Start"
+                        VerticalOptions="FillAndExpand"
+                        HeightRequest="30"
+                        Source="menubarmain.png"
+                        WidthRequest="30" />
+                    <Label
+                        HorizontalOptions="Center"
+                        Grid.Column="0"
+                        Text="SOFTWARE HOUSE"
+                        VerticalOptions="Center"
+                        FontSize="Medium"
+                        FontAttributes="Bold"
+                        TextColor="White" />
+                    <Button
+                        BorderWidth="0"
+                        Grid.Column="4"
+                        Text="JUAN DIEGO DUQUE"
+                        HeightRequest="50" />
+                    <Image
+                        Margin="10"
+                        Grid.Column="4"
+                        HorizontalOptions="End"
+                        VerticalOptions="Center"
+                        HeightRequest="50"
+                        Source="usermain.png"
+                        WidthRequest="50" />
+                </Grid>
+            </StackLayout>
+        </toolkit:DockLayout>
+    </ContentPage>
+    
+    <!--<TabBar>
+        <ShellContent
+            Title="General"
+            Icon="estadisticasmain.svg"
+            ContentTemplate="{DataTemplate local:PrincipalPage}" />
+        <ShellContent
+            Title="Chandozos"
+            Icon="chandozomain.svg"
+            ContentTemplate="{DataTemplate local:PrincipalChandozosPage}"
+            Shell.TabBarBackgroundColor="White" />
+        <ShellContent
+            Title="Panadería"
+            Icon="opcionesmain.svg"
+            ContentTemplate="{DataTemplate local:PrincipalPanaderiaPage}"
+            Shell.TabBarBackgroundColor="White" />
+        <ShellContent
+            Title="Franquicias"
+            Icon="opcionesmain.svg"
+            ContentTemplate="{DataTemplate local:PrincipalFranquiciasPage}"
+            Shell.TabBarBackgroundColor="White" />
+    </TabBar>-->
+</Shell>

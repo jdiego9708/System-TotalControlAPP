@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="SISTotalControl.APPAdmin.Views.ViewsProductos.ProductosPage"
+    Title="ProductosPage"
+    xmlns:viewModel="clr-namespace:SISTotalControl.APPAdmin.ViewsModels.VMProductos.ViewsProductos"
+    x:DataType="viewModel:ProductosViewModel">
+    <VerticalStackLayout>
+        <StackLayout>
+            <Grid
+                BackgroundColor="White"
+                Margin="20,20,20,10">
+                <Button
+                    BackgroundColor="{StaticResource Primary}"
+                    TextColor="{StaticResource White}"
+                    CornerRadius="14"
+                    FontAttributes="Bold"
+                    FontSize="16"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="FillAndExpand"
+                    HeightRequest="35"
+                    Text="JUAN DIEGO DUQUE"
+                    TextTransform="None"
+                    Padding="1" />
+
+                <Image
+                    HorizontalOptions="StartAndExpand"
+                    BackgroundColor="Transparent"
+                    HeightRequest="30"
+                    WidthRequest="30"
+                    Margin="27,0,0,0"
+                    Source="usuario.svg" />
+            </Grid>
+        </StackLayout>
+
+        <StackLayout>
+            <Grid
+                Margin="15,0,15,0"
+                ColumnDefinitions="*,*,*,*"
+                RowDefinitions="*,*">
+                <SearchBar
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="FillAndExpand"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="4"
+                    Grid.Row="0"
+                    Grid.RowSpan="2"
+                    FontSize="Medium"
+                    Placeholder="Búsqueda de productos..."
+                    HorizontalTextAlignment="Center"
+                    Text="{Binding Filter, Mode=TwoWay}"
+                    SearchCommand="{Binding SearchCommand}"
+                    IsEnabled="{Binding IsEnabled}" />
+            </Grid>
+        </StackLayout>
+
+        <StackLayout>
+            <RefreshView
+                Command="{Binding LoadProductosCommand}"
+                IsRefreshing="{Binding IsRefreshing}"
+                RefreshColor="{StaticResource Primary}">
+                <CollectionView
+                    x:Name="listProductos"
+                    EmptyView="No hay productos para mostrar"
+                    ItemsSource="{Binding ProductosVistaList}"
+                    Margin="20,20,20,0">
+                    <CollectionView.ItemsLayout>
+                        <GridItemsLayout
+                            Orientation="Horizontal"
+                            VerticalItemSpacing="10" />
+                    </CollectionView.ItemsLayout>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate
+                            x:DataType="viewModel:ProductoItemViewModel">
+                            <Frame
+                                CornerRadius="10"
+                                HeightRequest="150"
+                                Margin="20,0,20,0">
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer
+                                        Command="{Binding SelectProductoCommand}" />
+                                </Frame.GestureRecognizers>
+                                <Grid
+                                    ColumnDefinitions="*,*,*,*"
+                                    RowDefinitions="*,*,*,*">
+
+                                    <Image
+                                        Grid.Column="3"
+                                        Grid.ColumnSpan="2"
+                                        Grid.Row="2"
+                                        HeightRequest="55"
+                                        HorizontalOptions="End"
+                                        VerticalOptions="Start"
+                                        Source="nextmain.svg" />
+
+                                    <Image
+                                        Grid.Column="3"
+                                        Grid.ColumnSpan="2"
+                                        Grid.Row="2"
+                                        HeightRequest="55"
+                                        HorizontalOptions="End"
+                                        VerticalOptions="Start"
+                                        Source="nextmain.svg" />
+
+                                    <Label
+                                        FontSize="Subtitle"
+                                        FontAttributes="Bold"
+                                        Grid.Column="0"
+                                        Grid.ColumnSpan="4"
+                                        Grid.Row="0"
+                                        Text="{Binding Nombre_producto}" />
+                                    <Label />
+
+                                    <Label
+                                        FontSize="Subtitle"
+                                        FontAttributes="Bold"
+                                        Grid.Column="0"
+                                        Grid.ColumnSpan="2"
+                                        Grid.Row="1"
+                                        Text="{Binding Stock_producto.Cantidad_vista}" />
+                                    <Label />
+
+                                    <Label
+                                        FontSize="Subtitle"
+                                        FontAttributes="Bold"
+                                        Grid.Column="2"
+                                        Grid.ColumnSpan="2"
+                                        Grid.Row="1"
+                                        Text="{Binding Stock_producto.Fecha_ultimo_stock}" />
+                                    <Label />
+
+                                    <Image
+                                        Grid.Column="3"
+                                        Grid.ColumnSpan="2"
+                                        Grid.Row="2"
+                                        HeightRequest="55"
+                                        HorizontalOptions="End"
+                                        VerticalOptions="Start"
+                                        Source="nextmain.svg" />
+
+                                    <Label />
+                                </Grid>
+                            </Frame>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </RefreshView>
+        </StackLayout>
+    </VerticalStackLayout>
+</ContentPage>

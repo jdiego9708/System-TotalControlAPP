@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="SISTotalControl.APPAdmin.Views.ViewsPrincipales.ViewsChandozos.MenuChandozosPage">
+    <VerticalStackLayout>
+        <Grid
+            ColumnDefinitions="*,*,*,*"
+            Margin="20,40,0,0"
+            RowDefinitions="*,*,*,*,*,*,*"
+            RowSpacing="20">
+ 
+            <ImageButton
+                HorizontalOptions="Center"
+                HeightRequest="150"
+                Grid.Column="0"
+                Grid.ColumnSpan="4"
+                Grid.RowSpan="2"
+                Grid.Row="0"
+                Source="estadististicascuatromain.png"
+                VerticalOptions="Center"
+                WidthRequest="150" />
+
+            <ImageButton
+                HeightRequest="50"
+                Grid.Column="0"
+                Grid.Row="2"
+                Source="inventarymain.png"
+                WidthRequest="50" />
+
+            <Label
+                HorizontalOptions="Start"
+                FontAttributes="Bold"
+                FontSize="Medium"
+                Grid.Column="1"
+                Grid.ColumnSpan="3"
+                Grid.Row="2"
+                Text="Inventario por punto"
+                VerticalOptions="Center" />
+
+            <ImageButton
+                HeightRequest="50"
+                Grid.Column="0"
+                Grid.Row="3"
+                Source="solicitudesdosmain.png"
+                WidthRequest="50" />
+            <Label
+                HorizontalOptions="Start"
+                FontAttributes="Bold"
+                FontSize="Medium"
+                Grid.Column="1"
+                Grid.ColumnSpan="3"
+                Grid.Row="3"
+                Text="Novedades"
+                VerticalOptions="Center" />
+
+            <ImageButton
+                HeightRequest="50"
+                Grid.Column="0"
+                Grid.Row="4"
+                Source="ingresosmain.png"
+                WidthRequest="50" />
+            <Label
+                HorizontalOptions="Start"
+                FontAttributes="Bold"
+                FontSize="Medium"
+                Grid.Column="1"
+                Grid.ColumnSpan="3"
+                Grid.Row="4"
+                Text="Ingresos"
+                VerticalOptions="Center" />
+
+            <ImageButton
+                HeightRequest="50"
+                Grid.Column="0"
+                Grid.Row="5"
+                Source="gastosunomain.png"
+                WidthRequest="50" />
+            <Label
+                HorizontalOptions="Start"
+                FontAttributes="Bold"
+                FontSize="Medium"
+                Grid.Column="1"
+                Grid.ColumnSpan="3"
+                Grid.Row="5"
+                Text="Gastos"
+                VerticalOptions="Center" />
+
+            <ImageButton
+                HeightRequest="50"
+                Grid.Column="0"
+                Grid.Row="6"
+                Source="estadisticastresmain.png"
+                WidthRequest="50" />
+            <Label
+                HorizontalOptions="Start"
+                FontAttributes="Bold"
+                FontSize="Medium"
+                Grid.Column="1"
+                Grid.ColumnSpan="3"
+                Grid.Row="6"
+                Text="Ventas"
+                VerticalOptions="Center" />
+
+        </Grid>
+    </VerticalStackLayout>
+</ContentPage>

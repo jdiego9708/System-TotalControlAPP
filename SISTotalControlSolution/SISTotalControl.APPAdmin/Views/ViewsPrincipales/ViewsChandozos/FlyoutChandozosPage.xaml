@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<FlyoutPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="SISTotalControl.APPAdmin.Views.ViewsPrincipales.FlyoutChandozosPage"
+    xmlns:page="clr-namespace:SISTotalControl.APPAdmin.Views.ViewsTurnos"
+    xmlns:pageChandozos="clr-namespace:SISTotalControl.APPAdmin.Views.ViewsPrincipales.ViewsChandozos"
+    FlyoutLayoutBehavior="Default">
+
+    <FlyoutPage.Flyout>
+        <ContentPage
+            Title="Pagina1">
+            <Grid
+                ColumnDefinitions="*,*,*,*"
+                Margin="20,40,0,0"
+                RowDefinitions="150,50,70,50,50,50,50"
+                RowSpacing="20">
+
+                <Image
+                    HorizontalOptions="Center"
+                    HeightRequest="150"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="4"
+                    Grid.Row="0"
+                    Grid.RowSpan="2"
+                    Source="estadisticastresmain.png"
+                    VerticalOptions="Center"
+                    WidthRequest="150" />
+
+                <ImageButton
+                    HeightRequest="50"
+                    Grid.Column="0"
+                    Grid.Row="2"
+                    Source="inventarymain.png"
+                    WidthRequest="50" />
+
+                <Label
+                    HorizontalOptions="Start"
+                    FontAttributes="Bold"
+                    FontSize="Medium"
+                    Grid.Column="1"
+                    Grid.ColumnSpan="4"
+                    Grid.Row="2"
+                    Text="Inventario por punto"
+                    VerticalOptions="Center" />
+
+                <ImageButton
+                    HeightRequest="50"
+                    Grid.Column="0"
+                    Grid.Row="3"
+                    Source="solicitudesdosmain.png"
+                    WidthRequest="50" />
+                <Label
+                    HorizontalOptions="Start"
+                    FontAttributes="Bold"
+                    FontSize="Medium"
+                    Grid.Column="1"
+                    Grid.ColumnSpan="3"
+                    Grid.Row="3"
+                    Text="Novedades"
+                    VerticalOptions="Center" />
+
+                <ImageButton
+                    HeightRequest="50"
+                    Grid.Column="0"
+                    Grid.Row="4"
+                    Source="ingresosmain.png"
+                    WidthRequest="50" />
+                <Label
+                    HorizontalOptions="Start"
+                    FontAttributes="Bold"
+                    FontSize="Medium"
+                    Grid.Column="1"
+                    Grid.ColumnSpan="3"
+                    Grid.Row="4"
+                    Text="Ingresos"
+                    VerticalOptions="Center" />
+
+                <ImageButton
+                    HeightRequest="50"
+                    Grid.Column="0"
+                    Grid.Row="5"
+                    Source="gastosunomain.png"
+                    WidthRequest="50" />
+                <Label
+                    HorizontalOptions="Start"
+                    FontAttributes="Bold"
+                    FontSize="Medium"
+                    Grid.Column="1"
+                    Grid.ColumnSpan="3"
+                    Grid.Row="5"
+                    Text="Gastos"
+                    VerticalOptions="Center" />
+
+                <ImageButton
+                    HeightRequest="50"
+                    Grid.Column="0"
+                    Grid.Row="6"
+                    Source="estadisticascuatromain.png"
+                    WidthRequest="50" />
+                <Label
+                    HorizontalOptions="Start"
+                    FontAttributes="Bold"
+                    FontSize="Medium"
+                    Grid.Column="1"
+                    Grid.ColumnSpan="3"
+                    Grid.Row="6"
+                    Text="Ventas"
+                    VerticalOptions="Center" />
+
+            </Grid>
+        </ContentPage>
+    </FlyoutPage.Flyout>
+
+    <FlyoutPage.Detail>
+        <NavigationPage>
+            <x:Arguments>
+                <pageChandozos:PrincipalChandozosPage
+                    NavigationPage.HasNavigationBar="False" />
+            </x:Arguments>
+        </NavigationPage>
+    </FlyoutPage.Detail>
+
+    <!--<ScrollView>
+        
+    </ScrollView>-->
+
+
+    <!--<Shell.ItemTemplate>
+        <DataTemplate>
+            <Grid
+                ColumnDefinitions="*,*,*,*"
+                Margin="20,40,0,0"
+                RowDefinitions="*,*,*,*,*,*,*"
+                RowSpacing="20">
+
+                <ImageButton
+                    HorizontalOptions="Center"
+                    HeightRequest="150"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="4"
+                    Grid.RowSpan="2"
+                    Grid.Row="0"
+                    Source="estadististicascuatromain.png"
+                    VerticalOptions="Center"
+                    WidthRequest="150" />
+
+                <ImageButton
+                    HeightRequest="50"
+                    Grid.Column="0"
+                    Grid.Row="2"
+                    Source="inventarymain.png"
+                    WidthRequest="50" />
+
+                <Label
+                    HorizontalOptions="Start"
+                    FontAttributes="Bold"
+                    FontSize="Medium"
+                    Grid.Column="1"
+                    Grid.ColumnSpan="3"
+                    Grid.Row="2"
+                    Text="Inventario por punto"
+                    VerticalOptions="Center" />
+
+                <ImageButton
+                    HeightRequest="50"
+                    Grid.Column="0"
+                    Grid.Row="3"
+                    Source="solicitudesdosmain.png"
+                    WidthRequest="50" />
+                <Label
+                    HorizontalOptions="Start"
+                    FontAttributes="Bold"
+                    FontSize="Medium"
+                    Grid.Column="1"
+                    Grid.ColumnSpan="3"
+                    Grid.Row="3"
+                    Text="Novedades"
+                    VerticalOptions="Center" />
+
+                <ImageButton
+                    HeightRequest="50"
+                    Grid.Column="0"
+                    Grid.Row="4"
+                    Source="ingresosmain.png"
+                    WidthRequest="50" />
+                <Label
+                    HorizontalOptions="Start"
+                    FontAttributes="Bold"
+                    FontSize="Medium"
+                    Grid.Column="1"
+                    Grid.ColumnSpan="3"
+                    Grid.Row="4"
+                    Text="Ingresos"
+                    VerticalOptions="Center" />
+
+                <ImageButton
+                    HeightRequest="50"
+                    Grid.Column="0"
+                    Grid.Row="5"
+                    Source="gastosunomain.png"
+                    WidthRequest="50" />
+                <Label
+                    HorizontalOptions="Start"
+                    FontAttributes="Bold"
+                    FontSize="Medium"
+                    Grid.Column="1"
+                    Grid.ColumnSpan="3"
+                    Grid.Row="5"
+                    Text="Gastos"
+                    VerticalOptions="Center" />
+
+                <ImageButton
+                    HeightRequest="50"
+                    Grid.Column="0"
+                    Grid.Row="6"
+                    Source="estadisticastresmain.png"
+                    WidthRequest="50" />
+                <Label
+                    HorizontalOptions="Start"
+                    FontAttributes="Bold"
+                    FontSize="Medium"
+                    Grid.Column="1"
+                    Grid.ColumnSpan="3"
+                    Grid.Row="6"
+                    Text="Ventas"
+                    VerticalOptions="Center" />
+
+            </Grid>
+        </DataTemplate>
+    </Shell.ItemTemplate>-->
+
+    <!--<Shell.ItemTemplate>
+        <DataTemplate>
+            <Grid
+                ColumnDefinitions="*,*,*,*"
+                Margin="20,40,0,0"
+                RowDefinitions="*,*,*,*,*,*,*"
+                RowSpacing="20">
+
+                <ImageButton
+                    HorizontalOptions="Center"
+                    HeightRequest="150"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="4"
+                    Grid.RowSpan="2"
+                    Grid.Row="0"
+                    Source="estadististicascuatromain.png"
+                    VerticalOptions="Center"
+                    WidthRequest="150" />
+
+                <ImageButton
+                    HeightRequest="50"
+                    Grid.Column="0"
+                    Grid.Row="2"
+                    Source="inventarymain.png"
+                    WidthRequest="50" />
+
+                <Label
+                    HorizontalOptions="Start"
+                    FontAttributes="Bold"
+                    FontSize="Medium"
+                    Grid.Column="1"
+                    Grid.ColumnSpan="3"
+                    Grid.Row="2"
+                    Text="Inventario por punto"
+                    VerticalOptions="Center" />
+
+                <ImageButton
+                    HeightRequest="50"
+                    Grid.Column="0"
+                    Grid.Row="3"
+                    Source="solicitudesdosmain.png"
+                    WidthRequest="50" />
+                <Label
+                    HorizontalOptions="Start"
+                    FontAttributes="Bold"
+                    FontSize="Medium"
+                    Grid.Column="1"
+                    Grid.ColumnSpan="3"
+                    Grid.Row="3"
+                    Text="Novedades"
+                    VerticalOptions="Center" />
+
+                <ImageButton
+                    HeightRequest="50"
+                    Grid.Column="0"
+                    Grid.Row="4"
+                    Source="ingresosmain.png"
+                    WidthRequest="50" />
+                <Label
+                    HorizontalOptions="Start"
+                    FontAttributes="Bold"
+                    FontSize="Medium"
+                    Grid.Column="1"
+                    Grid.ColumnSpan="3"
+                    Grid.Row="4"
+                    Text="Ingresos"
+                    VerticalOptions="Center" />
+
+                <ImageButton
+                    HeightRequest="50"
+                    Grid.Column="0"
+                    Grid.Row="5"
+                    Source="gastosunomain.png"
+                    WidthRequest="50" />
+                <Label
+                    HorizontalOptions="Start"
+                    FontAttributes="Bold"
+                    FontSize="Medium"
+                    Grid.Column="1"
+                    Grid.ColumnSpan="3"
+                    Grid.Row="5"
+                    Text="Gastos"
+                    VerticalOptions="Center" />
+
+                <ImageButton
+                    HeightRequest="50"
+                    Grid.Column="0"
+                    Grid.Row="6"
+                    Source="estadisticastresmain.png"
+                    WidthRequest="50" />
+                <Label
+                    HorizontalOptions="Start"
+                    FontAttributes="Bold"
+                    FontSize="Medium"
+                    Grid.Column="1"
+                    Grid.ColumnSpan="3"
+                    Grid.Row="6"
+                    Text="Ventas"
+                    VerticalOptions="Center" />
+
+            </Grid>
+        </DataTemplate>
+    </Shell.ItemTemplate>-->
+
+
+    <!--<ShellContent
+            Title="Monkeys"
+            Icon="monkey.png"
+            ContentTemplate="{DataTemplate pageChandozos:MenuChandozosPage}" />-->
+    <!--<ShellContent
+            Title="Elephants"
+            Icon="elephant.png"
+            ContentTemplate="{DataTemplate views:ElephantsPage}" />
+        <ShellContent
+            Title="Bears"
+            Icon="bear.png"
+            ContentTemplate="{DataTemplate views:BearsPage}" />-->
+
+</FlyoutPage>

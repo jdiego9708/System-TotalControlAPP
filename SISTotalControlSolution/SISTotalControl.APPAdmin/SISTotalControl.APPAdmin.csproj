@@ -1,0 +1,141 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFrameworks>net7.0-android;net7.0-ios;net7.0-maccatalyst</TargetFrameworks>
+		<TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net7.0-windows10.0.19041.0</TargetFrameworks>
+		<!-- Uncomment to also build the tizen app. You will need to install tizen by following this: https://github.com/Samsung/Tizen.NET -->
+		<!-- <TargetFrameworks>$(TargetFrameworks);net6.0-tizen</TargetFrameworks> -->
+		<OutputType>Exe</OutputType>
+		<RootNamespace>SISTotalControl.APPAdmin</RootNamespace>
+		<UseMaui>true</UseMaui>
+		<SingleProject>true</SingleProject>
+		<ImplicitUsings>enable</ImplicitUsings>
+
+		<!-- Display name -->
+		<ApplicationTitle>SISTotalControl.APPAdmin</ApplicationTitle>
+
+		<!-- App Identifier -->
+		<ApplicationId>com.companyname.sistotalcontrol.appadmin</ApplicationId>
+		<ApplicationIdGuid>cea0e4f7-4e8b-49b7-ad51-b506f3b364b0</ApplicationIdGuid>
+
+		<!-- Versions -->
+		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
+		<ApplicationVersion>1</ApplicationVersion>
+
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">14.2</SupportedOSPlatformVersion>
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">14.0</SupportedOSPlatformVersion>
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">21.0</SupportedOSPlatformVersion>
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</SupportedOSPlatformVersion>
+		<TargetPlatformMinVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</TargetPlatformMinVersion>
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<!-- App Icon -->
+		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#512BD4" />
+
+		<!-- Splash Screen -->
+		<MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#512BD4" BaseSize="128,128" />
+
+		<!-- Images -->
+		<MauiImage Include="Resources\Images\*" />
+		<MauiImage Update="Resources\Images\dotnet_bot.svg" BaseSize="168,208" />
+
+		<!-- Custom Fonts -->
+		<MauiFont Include="Resources\Fonts\*" />
+
+		<!-- Raw Assets (also remove the "Resources\Raw" prefix) -->
+		<MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Remove="Resources\Images\admingeneralmain.svg" />
+	  <None Remove="Resources\Images\admingeneraluno.svg" />
+	  <None Remove="Resources\Images\chandozomain.svg" />
+	  <None Remove="Resources\Images\configurationdosmain.svg" />
+	  <None Remove="Resources\Images\configurationmain.svg" />
+	  <None Remove="Resources\Images\estadisticascuatromain.svg" />
+	  <None Remove="Resources\Images\estadisticasmain.svg" />
+	  <None Remove="Resources\Images\estadisticastresmain.svg" />
+	  <None Remove="Resources\Images\estadististicasunomain.svg" />
+	  <None Remove="Resources\Images\franquiciasmain.svg" />
+	  <None Remove="Resources\Images\gastomain.svg" />
+	  <None Remove="Resources\Images\gastosunomain.svg" />
+	  <None Remove="Resources\Images\hotdogmain.svg" />
+	  <None Remove="Resources\Images\ingresosmain.svg" />
+	  <None Remove="Resources\Images\inventarymain.svg" />
+	  <None Remove="Resources\Images\logomain.png" />
+	  <None Remove="Resources\Images\menubarmain.svg" />
+	  <None Remove="Resources\Images\panaderiamain.svg" />
+	  <None Remove="Resources\Images\solicitudesdosmain.svg" />
+	  <None Remove="Resources\Images\surtirfranquiciasmain.svg" />
+	  <None Remove="Resources\Images\surtirfranquiciasunomain.svg" />
+	  <None Remove="Resources\Images\surtirpuntosmain.svg" />
+	  <None Remove="Resources\Images\usermain.svg" />
+	  <None Remove="Resources\Images\walletcuatromain.svg" />
+	  <None Remove="Resources\Images\wallpaperdos.png" />
+	  <None Remove="Resources\Images\wallpaperuno.png" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="CommunityToolkit.Maui" Version="2.0.0" />
+		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.0.0" />
+		<PackageReference Include="epj.RadialDial.Maui" Version="1.0.2-pre2" />
+		<PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="6.0.0" />
+		<PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="6.0.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\SISTotalControl.Entidades\SISTotalControl.Entidades.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Update="Views\ViewsPrincipales\ViewsChandozos\FlyoutChandozosPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\ViewsPrincipales\LoginPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\ViewsPrincipales\ViewsChandozos\MenuChandozosPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\ViewsPrincipales\ViewsChandozos\PrincipalChandozosPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\ViewsPrincipales\PrincipalFranquiciasPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\ViewsPrincipales\PrincipalPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\ViewsPrincipales\PrincipalPanaderiaPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\ViewsPrincipales\TabBarMainPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\ViewsPrincipales\ViewsGeneral\FlyoutGeneralPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\ViewsPrincipales\ViewsGeneral\MenuGeneralPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\ViewsPrincipales\ViewsGeneral\PrincipalGeneralPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\ViewsProductos\ProductosPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\ViewsTurnos\ResumenTurnoChandozos.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\ViewsTurnos\ResumenTurnoGeneral.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="ViewsModels\VMUsuarios\" />
+	</ItemGroup>
+
+</Project>

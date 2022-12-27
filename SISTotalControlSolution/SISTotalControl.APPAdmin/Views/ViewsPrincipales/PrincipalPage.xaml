@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="SISTotalControl.APPAdmin.Views.ViewsPrincipales.PrincipalPage"
+    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    BackgroundImageSource="wallpaperdos.png"
+    Title="Principal">
+    <ContentView>
+        <Grid
+            Margin="40"
+            RowSpacing="10"
+            ColumnSpacing="0"
+            ColumnDefinitions="*,*,*,*"
+            RowDefinitions="50,*,*,*">
+
+            <Label
+                Grid.Column="0"
+                Grid.ColumnSpan="4"
+                Grid.Row="0"
+                FontSize="Large"
+                FontAttributes="Bold"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                Text="Módulos disponibles" />
+
+            <StackLayout
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
+                Grid.Row="1"
+                HorizontalOptions="Center"
+                VerticalOptions="Center">
+                <Label
+                    Text="General"
+                    FontSize="Medium"
+                    FontAttributes="Bold"
+                    HorizontalOptions="Center" />
+                <ImageButton
+                    Clicked="GeneralButton_Clicked"
+                    HeightRequest="120"
+                    WidthRequest="100"
+                    Source="admingeneraluno.png"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center" />
+                <Label
+                    Text="Administración de inventario general"
+                    HorizontalOptions="Center"
+                    HorizontalTextAlignment="Center" />
+            </StackLayout>
+
+            <StackLayout
+                Grid.Column="2"
+                Grid.ColumnSpan="2"
+                Grid.Row="1"
+                HorizontalOptions="Center"
+                VerticalOptions="Center">
+                <Label
+                    Text="Chandozos"
+                    FontSize="Medium"
+                    FontAttributes="Bold"
+                    HorizontalOptions="Center" />
+                <ImageButton
+                    Clicked="ChandozosButton_Clicked"
+                    HeightRequest="120"
+                    WidthRequest="100"
+                    Source="hotdogmain.png"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center" />
+                <Label
+                    Text="Administración inventario de puntos"
+                    HorizontalOptions="Center"
+                    HorizontalTextAlignment="Center" />
+            </StackLayout>
+
+            <StackLayout
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
+                Grid.Row="2"
+                HorizontalOptions="Center"
+                VerticalOptions="Center">
+                <Label
+                    Text="Panadería"
+                    FontSize="Medium"
+                    FontAttributes="Bold"
+                    HorizontalOptions="Center" />
+                <ImageButton
+                    HeightRequest="120"
+                    WidthRequest="100"
+                    Source="panaderiamain.png"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center" />
+                <Label
+                    Text="Administración de panadería"
+                    HorizontalOptions="Center"
+                    HorizontalTextAlignment="Center" />
+            </StackLayout>
+
+            <StackLayout
+                Grid.Column="2"
+                Grid.ColumnSpan="2"
+                Grid.Row="2"
+                HorizontalOptions="Center"
+                VerticalOptions="Center">
+                <Label
+                    Text="Franquicias"
+                    FontSize="Medium"
+                    FontAttributes="Bold"
+                    HorizontalOptions="Center" />
+                <ImageButton
+                    HeightRequest="120"
+                    WidthRequest="100"
+                    Source="franquiciasmain.png"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center" />
+                <Label
+                    Text="Administración de franquicias"
+                    HorizontalOptions="Center"
+                    HorizontalTextAlignment="Center" />
+            </StackLayout>
+
+            <StackLayout
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
+                Grid.Row="3"
+                HorizontalOptions="Center"
+                VerticalOptions="Center">
+                <Label
+                    Text="Avanzado"
+                    FontSize="Medium"
+                    FontAttributes="Bold"
+                    HorizontalOptions="Center" />
+                <ImageButton
+                    HeightRequest="120"
+                    WidthRequest="100"
+                    Source="configurationdosmain.png"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center" />
+                <Label
+                    Text="Administración avanzada del sistema"
+                    HorizontalOptions="Center"
+                    HorizontalTextAlignment="Center" />
+            </StackLayout>
+
+        </Grid>
+    </ContentView>
+</ContentPage>
